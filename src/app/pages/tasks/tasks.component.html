@@ -1,0 +1,23 @@
+<div class="container lstask">
+    <div class="findPerson">
+        <p>id number</p>
+        <input #personId>
+        <a href="/personTasks/{{personId.value}}">
+            <button routerLink="/personTasks/{{personId.value}}">Find</button>
+        </a>
+    </div>
+    <div>
+        <ul class="tasks">
+            <li *ngFor="let task of tasks">
+                <a routerLink="/detail/{{task.id}}">
+                    <span  class="badge" >{{task.id}}</span>{{task.taskName}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="partpage">
+        <div *ngFor="let i of pages" class="btpage">
+            <button (click)="partionPage(i)">{{i}}</button>
+        </div>      
+    </div>
+</div>

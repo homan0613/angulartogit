@@ -1,0 +1,18 @@
+<form name="formCalander" >
+	<button (click)="goBack()" class="goback">Go Back</button>
+	<select #personId (change)="onChange(personId.value)" class="formCalander">
+		<option value="">---Please select---</option>
+		<option *ngFor="let id of personIds" value="{{id}}">{{id}}</option>
+	</select>
+</form>
+<ng-container *ngIf = "options">
+<ng-fullcalendar 
+	#fullcalendar 
+	(dateClick) = "dateClick($event)" 
+	(clickButton) = "clickButton($event)"
+	(eventDragStop) = "eventDragStop($event)" 
+	[eventsModel] = "eventsModel" 
+	[options] = "options"
+	(eventClick) = "eventClick($event)">
+</ng-fullcalendar>
+</ng-container>

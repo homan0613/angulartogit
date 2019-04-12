@@ -1,0 +1,54 @@
+label {
+	display: inline-block;
+	width: 5em;
+	margin: .5em 0;
+	color: #607D8B;
+	font-weight: bold;
+}
+
+input {
+	height: 2em;
+	font-size: 1em;
+	padding-left: .4em;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+
+button {
+	font-family: Arial;
+	background-color: #eee;
+	border: none;
+	margin: 0px 0px 10px 150px;
+	border-radius: 4px;
+	height: 30px;
+	width: 70px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+button:hover {
+	background-color: #cfd8dc;
+}
+
+button:disabled {
+	background-color: #eee;
+	color: #ccc;
+	cursor: auto;
+}
+
+.taskdetail {
+	border: 1px solid black;
+	width: 27%;
+	left: 45%;
+	margin-left: 36%;
+	border-radius: 6px;
+	margin-top: 100px;
+}
+
+h2, .detail {
+	padding-left: 150px;
+}
+
+ul{
+	list-style-type: none;
+}
