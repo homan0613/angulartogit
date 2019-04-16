@@ -1,8 +1,8 @@
 <form name="formCalander" >
-	<button (click)="goBack()" class="goback">Go Back</button>
-	<select #personId (change)="onChange(personId.value)" class="formCalander">
-		<option value="">---Please select---</option>
-		<option *ngFor="let id of personIds" value="{{id}}">{{id}}</option>
+	<button class = "goback">Person Id</button>
+	<select #personId (change) = "onChange(personId.value)" class = "formCalander">
+		<option value = "">---Please select---</option>
+		<option *ngFor = "let id of personIds" value = "{{id}}">{{id}}</option>
 	</select>
 </form>
 <ng-container *ngIf = "options">

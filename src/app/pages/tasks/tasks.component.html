@@ -1,23 +1,28 @@
-<div class="container lstask">
-    <div class="findPerson">
-        <p>id number</p>
-        <input #personId>
-        <a href="/personTasks/{{personId.value}}">
-            <button routerLink="/personTasks/{{personId.value}}">Find</button>
-        </a>
+<div class="lstask">
+    
+    <div class="name">
+        <h2 >List Tasks</h2>
     </div>
-    <div>
-        <ul class="tasks">
-            <li *ngFor="let task of tasks">
+    <div class="findTask">
+            <input #taskKey type="text"  (keyup)="findTask(taskKey.value)" (keyup.enter)="findTask(taskKey.value)" >
+            <button (click)="findTask(taskKey.value)" >Find</button>
+        </div>
+    <div class="tasks">
+        <ul>
+                <!-- //(click)="activeDetail()" -->
+            <li *ngFor="let task of tasks"  >
                 <a routerLink="/detail/{{task.id}}">
-                    <span  class="badge" >{{task.id}}</span>{{task.taskName}}
+                    <span  class="badge" id="activeDetail">{{task.id}}</span>{{task.taskName}}
                 </a>
             </li>
         </ul>
     </div>
     <div class="partpage">
-        <div *ngFor="let i of pages" class="btpage">
-            <button (click)="partionPage(i)">{{i}}</button>
-        </div>      
-    </div>
+            <div *ngFor="let i of pages" class="btpage">
+                <button (click)="partionPage(i)">{{i}}</button>
+            </div>      
+        </div>
+</div>
+<div id="calendar" class="commom">
+    <app-day-grid-month></app-day-grid-month>
 </div>

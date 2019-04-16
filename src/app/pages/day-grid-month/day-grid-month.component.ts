@@ -30,7 +30,7 @@ export class DayGridMonthComponent implements OnInit {
 
 	ngOnInit() {
 		this.getPersonId();
-		const value = +this.route.snapshot.paramMap.get('personId');
+		const value =+ this.route.snapshot.paramMap.get('personId');
 		this.getPerson(value);
 	}
 
@@ -71,17 +71,16 @@ export class DayGridMonthComponent implements OnInit {
 	}
 
 	// lay danh sach task theo person truyen vao event cua fullcalendar
-	getPerson(value: any): void {
+	getPerson(value: any) : void {
 		this.tasksService.getPerson(value)
 			.subscribe(t => {
+				var eventjson: Object[] = [];
 				if ( t == 0 ) {
-					alert.call(this.goBack(), "khong tim thay id");
 				} else {
 					this.personTask = t
-					var eventjson: Object[] = [];
 					for (var i = 0; i < this.personTask.length; i++) {
 						eventjson.push(new EventCalendar(this.personTask[i].taskName, this.convertDate(this.personTask[i].start), this.convertDate(this.personTask[i].end) + "T24:00:00"));
-					}
+					}}
 					this.options = {
 						editable: true,
 						events: eventjson,
@@ -102,7 +101,7 @@ export class DayGridMonthComponent implements OnInit {
 					};
 
 				}
-			})
+			)
 
 	}
 
